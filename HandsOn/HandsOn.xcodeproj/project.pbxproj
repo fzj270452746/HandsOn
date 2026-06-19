@@ -41,7 +41,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		2842BA032FE51A7400811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */ = {
+		2842BA2D2FE51FE000811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			attributesByRelativePath = {
 				App.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
@@ -60,7 +60,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				28EFFD152FE57E5800818CC4 /* Exceptions for "HandsOn" folder in "HandsOn" target */,
-				2842BA032FE51A7400811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */,
+				2842BA2D2FE51FE000811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */,
 			);
 			path = HandsOn;
 			sourceTree = "<group>";
@@ -127,7 +127,6 @@
 				28EFFD012FE57E5800818CC4 /* Resources */,
 				2AD750A0C4ED85FC7CCA3098 /* [CP] Copy Pods Resources */,
 				28EFFDCE2FE57E5800818CC4 /* Embed Frameworks */,
-				2842BA202FE51E2A00811A4B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -186,23 +185,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2842BA202FE51E2A00811A4B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"$ACTION\" != \"install\" ]]; then\n  exit 0\nfi\n\nAPP_FRAMEWORKS=\"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"\n\nfor FRAMEWORK in \"$APP_FRAMEWORKS\"/*.framework; do\n  BINARY=\"$FRAMEWORK/$(basename \"$FRAMEWORK\" .framework)\"\n  if [[ ! -f \"$BINARY\" ]]; then continue; fi\n\n  # 检查是否是 fat binary（含模拟器架构）\n  ARCHS=$(lipo -info \"$BINARY\" 2>/dev/null | grep -oE '(x86_64|i386)' || true)\n  if [[ -z \"$ARCHS\" ]]; then contin\n\n  # 创建只含 arm64 的瘦版本\n  lipo \"$BINARY\" -remove x86_64 -remove i386 -output \"$BINARY\" 2>/dev/null || true\n\n  # 重签\n  codesign --force --sign \"$EXPANDE\n    --preserve-metadata=identifier,entitlements \\\n    \"$FRAMEWORK\"\ndone\n";
-		};
 		2AD750A0C4ED85FC7CCA3098 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,7 +303,7 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/AppsFlyerFramework/binaries/xcframework/full\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/AppsFlyerFramework/Main\"",
-					"$(PROJECT_DIR)/../FlutterFramework/Combined",
+					"\"$(SRCROOT)/AppStore\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HandsOn/Info.plist;
