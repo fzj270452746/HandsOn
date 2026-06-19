@@ -41,7 +41,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		2842B9122FE4EB6800811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */ = {
+		2842BA032FE51A7400811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			attributesByRelativePath = {
 				App.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
@@ -60,7 +60,7 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				28EFFD152FE57E5800818CC4 /* Exceptions for "HandsOn" folder in "HandsOn" target */,
-				2842B9122FE4EB6800811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */,
+				2842BA032FE51A7400811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */,
 			);
 			path = HandsOn;
 			sourceTree = "<group>";
