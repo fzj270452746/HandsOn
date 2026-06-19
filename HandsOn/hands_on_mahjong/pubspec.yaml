@@ -1,0 +1,26 @@
+name: hands_on_mahjong
+description: "Hands On Mahjong - 盲摸听牌触感解谜游戏"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.3
+  provider: ^6.1.2
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  module:
+    androidX: true
+    androidPackage: com.example.hands_on_mahjong
+    iosBundleIdentifier: com.example.handsOnMahjong

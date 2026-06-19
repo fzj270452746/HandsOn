@@ -2,17 +2,38 @@ PODS:
   - AppsFlyerFramework (6.18.0):
     - AppsFlyerFramework/Main (= 6.18.0)
   - AppsFlyerFramework/Main (6.18.0)
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+    - shared_preferences_foundation
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - AppsFlyerFramework
+  - Flutter (from `hands_on_mahjong/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `hands_on_mahjong/.ios/Flutter/FlutterPluginRegistrant`)
+  - shared_preferences_foundation (from `hands_on_mahjong/.ios/.symlinks/plugins/shared_preferences_foundation/darwin`)
 
 SPEC REPOS:
   trunk:
     - AppsFlyerFramework
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: hands_on_mahjong/.ios/Flutter
+  FlutterPluginRegistrant:
+    :path: hands_on_mahjong/.ios/Flutter/FlutterPluginRegistrant
+  shared_preferences_foundation:
+    :path: hands_on_mahjong/.ios/.symlinks/plugins/shared_preferences_foundation/darwin
+
 SPEC CHECKSUMS:
   AppsFlyerFramework: c1e1e4cd3b98ffdca2fe32b17ae93909e409b6ab
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  FlutterPluginRegistrant: 10652802ba56261e4e088dd8f88965ba97a9f609
+  shared_preferences_foundation: 5086985c1d43c5ba4d5e69a4e8083a389e2909e6
 
-PODFILE CHECKSUM: 5b0c0cf00872b3f059ca0cda192aa12969e0b892
+PODFILE CHECKSUM: 4d3a03bd1fe472bb477513dc88b351f6e6ea1efc
 
 COCOAPODS: 1.16.2

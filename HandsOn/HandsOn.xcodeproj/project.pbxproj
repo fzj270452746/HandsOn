@@ -40,27 +40,11 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		2842BA2D2FE51FE000811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			attributesByRelativePath = {
-				App.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
-				Flutter.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
-			};
-			buildPhase = 28EFFDCE2FE57E5800818CC4 /* Embed Frameworks */;
-			membershipExceptions = (
-				App.xcframework,
-				Flutter.xcframework,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		28EFFD052FE57E5800818CC4 /* HandsOn */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				28EFFD152FE57E5800818CC4 /* Exceptions for "HandsOn" folder in "HandsOn" target */,
-				2842BA2D2FE51FE000811A4B /* Exceptions for "HandsOn" folder in "Embed Frameworks" phase from "HandsOn" target */,
 			);
 			path = HandsOn;
 			sourceTree = "<group>";
@@ -122,11 +106,14 @@
 			buildConfigurationList = 28EFFD162FE57E5800818CC4 /* Build configuration list for PBXNativeTarget "HandsOn" */;
 			buildPhases = (
 				8C3D5E8A2A0E0286072D94EE /* [CP] Check Pods Manifest.lock */,
+				F47084AD89EB1AF15165D8D6 /* [CP-User] Run Flutter Build hands_on_mahjong Script */,
 				28EFFCFF2FE57E5800818CC4 /* Sources */,
 				28EFFD002FE57E5800818CC4 /* Frameworks */,
 				28EFFD012FE57E5800818CC4 /* Resources */,
 				2AD750A0C4ED85FC7CCA3098 /* [CP] Copy Pods Resources */,
 				28EFFDCE2FE57E5800818CC4 /* Embed Frameworks */,
+				D5E21323C6E3BFD4E99BDAA6 /* [CP] Embed Pods Frameworks */,
+				4F48C717D18C5838758A671F /* [CP-User] Embed Flutter Build hands_on_mahjong Script */,
 			);
 			buildRules = (
 			);
@@ -193,18 +180,24 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4F48C717D18C5838758A671F /* [CP-User] Embed Flutter Build hands_on_mahjong Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Embed Flutter Build hands_on_mahjong Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/hands_on_mahjong/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh embed_and_thin";
 		};
 		8C3D5E8A2A0E0286072D94EE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -227,6 +220,33 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D5E21323C6E3BFD4E99BDAA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HandsOn/Pods-HandsOn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F47084AD89EB1AF15165D8D6 /* [CP-User] Run Flutter Build hands_on_mahjong Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build hands_on_mahjong Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/hands_on_mahjong/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 /* End PBXShellScriptBuildPhase section */
 
